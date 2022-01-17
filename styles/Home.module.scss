@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .productsContainer {
+    display: flex;
+    gap: 2rem;
+    margin: 3rem 0;
+    width: 90%;
+    height: 100%;
+
+    .tableOptions {
+      height: 100%;
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      h3 {
+        margin: 0;
+        margin-bottom: 1rem;
+        font-weight: 300;
+      }
+      .headerGroup {
+        height: 50%;
+        display: flex;
+        width: 100%;
+        gap: 2rem;
+      }
+
+      .selected {
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+}

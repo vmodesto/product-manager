@@ -1,0 +1,29 @@
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  .info {
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    background: white;
+    box-shadow: 0.25rem 0.4rem 1rem #0003;
+    h4 {
+      margin: 0;
+    }
+    text-align: center;
+    h5 {
+      color: #00000066;
+      margin: 0;
+      font-weight: 300;
+    }
+    h4 {
+      font-weight: 600;
+    }
+  }
+}
