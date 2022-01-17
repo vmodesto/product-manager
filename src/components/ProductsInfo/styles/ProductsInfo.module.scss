@@ -27,3 +27,19 @@
     }
   }
 }
+
+// responsiveness
+.infoContainer {
+  @media screen and (max-width: 1050px) {
+    width: 100%;
+    .info {
+      grid-template-columns: 1fr 1fr 1.1fr;
+    }
+  }
+  @media screen and (max-width: 920px) {
+    width: 30%;
+    .info {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

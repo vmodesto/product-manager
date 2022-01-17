@@ -23,23 +23,25 @@ export function ProductFilter({
     <div className={styles.filterContainer}>
       <h3>Filter</h3>
       <div className={styles.filter}>
-        <div>
-          <h5>Element to filter</h5>
-          <input
-            value={elementToFilter}
-            name="elementToFilter"
-            onChange={handleFilterChange}
-            placeholder="Element to filter"
-          />
-        </div>
-        <div>
-          <h5>Filter value</h5>
-          <input
-            value={filterValue}
-            name="filterValue"
-            onChange={handleFilterChange}
-            placeholder="Filter value"
-          />
+        <div className={styles.inputs}>
+          <div>
+            <h5>Element</h5>
+            <input
+              value={elementToFilter}
+              name="elementToFilter"
+              onChange={handleFilterChange}
+              placeholder="Element to filter"
+            />
+          </div>
+          <div>
+            <h5>Value</h5>
+            <input
+              value={filterValue}
+              name="filterValue"
+              onChange={handleFilterChange}
+              placeholder="Filter value"
+            />
+          </div>
         </div>
         <div>
           <h5>Filter by</h5>

@@ -116,10 +116,6 @@ const Home: NextPage = () => {
       </Head>
       <Header />
       <div className={styles.productsContainer}>
-        <ProductTable
-          handlePageChange={handlePageChange}
-          products={productsData.products}
-        />
         <div className={styles.tableOptions}>
           <div className={styles.headerGroup}>
             <OrderProducts
@@ -138,6 +134,10 @@ const Home: NextPage = () => {
           </div>
           <ProductsInfo meta={productsData.meta} />
         </div>
+        <ProductTable
+          handlePageChange={handlePageChange}
+          products={productsData.products}
+        />
       </div>
     </div>
   );

@@ -77,21 +77,25 @@ export function OrderProducts({
             </small>
           </div>
         </div>
-        <h5>Order type: </h5>
-        <button
-          name="asc"
-          onClick={handleOrderClick}
-          className={productParams.order === "asc" ? styles.selected : ""}
-        >
-          ASC
-        </button>
-        <button
-          name="desc"
-          onClick={handleOrderClick}
-          className={productParams.order === "desc" ? styles.selected : ""}
-        >
-          DESC
-        </button>
+        <div className={styles.orderTypeContainer}>
+          <h5>Order type: </h5>
+          <div className={styles.orderTypeButtons}>
+            <button
+              name="asc"
+              onClick={handleOrderClick}
+              className={productParams.order === "asc" ? styles.selected : ""}
+            >
+              ASC
+            </button>
+            <button
+              name="desc"
+              onClick={handleOrderClick}
+              className={productParams.order === "desc" ? styles.selected : ""}
+            >
+              DESC
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

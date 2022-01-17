@@ -15,7 +15,7 @@
     border-radius: 0.25rem;
     background: white;
     box-shadow: 0.25rem 0.4rem 1rem #0003;
-    
+
     h5 {
       margin: 0;
       font-weight: 600;
@@ -31,7 +31,7 @@
         grid-template-columns: 1fr 1fr;
         small {
           display: flex;
-          background: #F4F4F4;
+          background: #f4f4f4;
           color: #00000066;
           justify-content: center;
           align-items: center;
@@ -46,16 +46,64 @@
         }
       }
     }
-    .selected {
-      background: #000;
-      color: #fff;
+    .orderTypeContainer {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      .orderTypeButtons {
+        gap: 1rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+      }
     }
     button {
-      background: #F4F4F4;
+      background: #f4f4f4;
       color: #00000066;
       font-size: 14px;
       &:hover {
         filter: brightness(0.9);
+      }
+    }
+    .selected {
+      background: #000;
+      color: #fff;
+    }
+  }
+}
+
+//responsiveness
+.orderContainer {
+  @media screen and (max-width: 1050px) {
+    width: 100%;
+    .order {
+      .orderOptionsContainer {
+        .orderOptions {
+          grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        }
+      }
+      .orderTypeContainer {
+        flex-direction: row;
+        .orderTypeButtons {
+          flex-direction: row;
+          button {
+            width: 50%;
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 920px) {
+    width: 50%;
+    .order {
+      justify-content: space-between;
+      width: 100%;
+      .orderOptionsContainer {
+        justify-content: space-between;
+        .orderOptions {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
       }
     }
   }

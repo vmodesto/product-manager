@@ -28,11 +28,26 @@
         display: flex;
         width: 100%;
         gap: 2rem;
+        @media screen and (max-width: 1050px) {
+          flex-direction: column;
+        }
       }
 
       .selected {
         background: #000;
         color: #fff;
+      }
+    }
+    @media screen and (max-width: 920px) {
+      flex-direction: column;
+      .tableOptions {
+        width: 100%;
+        flex-direction: row;
+        .headerGroup {
+          width: 100%;
+          height: 100%;
+          flex-direction: row;
+        }
       }
     }
   }
