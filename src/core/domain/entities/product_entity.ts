@@ -4,4 +4,5 @@ export interface ProductEntity {
   description: string,
   price: string,
   quantity: number,
+  related_products?: ProductEntity[],
 }

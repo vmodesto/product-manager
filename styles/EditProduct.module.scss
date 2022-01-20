@@ -1,0 +1,38 @@
+.container {
+  width: 100%;
+  h1 {
+    text-align: center;
+  }
+  .formContainer {
+    display: table;
+    margin: 0 auto;
+    padding-top: 3rem;
+    form {
+      width: 350px;
+      padding: 1rem;
+      background: #FFFF;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      button {
+        width: 80%;
+        color: #FFF;
+        background: #1a8fe3;
+      }
+      label {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        input {
+          width: 100%;
+          margin-top: 0.5rem;
+        }
+        small {
+          font-weight: 300;
+          color: #ff6464;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+.modal {
+  box-shadow: 0.25rem 0.4rem 1rem #0003;
+  position: absolute;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 30%;
+  left: 30%;
+  right: 30%;
+  bottom: 30%;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  overflow: hidden;
+
+  .productInfo {
+    display: flex;
+    gap: 1rem;
+
+    small {
+      font-weight: lighter;
+    }
+  }
+
+  .buttonsContainer {
+    width: 100%;
+    margin: 1rem;
+    padding: 2rem;
+    display: flex;
+    gap: 1rem;
+
+    button {
+      width: 50%;
+      &:first-child {
+        color: #00000066;
+        font-weight: 300;
+        label {
+          border-bottom: 1px #00000066 solid;
+          cursor: pointer;
+        }
+        
+        &:hover {
+          background: #f4f4f4;
+        }
+      }
+      &:last-child {
+        background: #ff6464;
+        color: #fff;
+      }
+    }
+  }
+}

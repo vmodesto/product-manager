@@ -5,7 +5,7 @@ import styles from "./styles/ProductFilter.module.scss";
 interface ProductFilterProps {
   handleFilterConditionClick: (e: React.FormEvent<HTMLButtonElement>) => void;
   handleFilterChange: (e: React.FormEvent<HTMLInputElement>) => void;
-  handleApplyFilterClick: () => void,
+  handleApplyFilterClick: () => void;
   elementToFilter?: string;
   filterValue?: string;
   condition?: string;
@@ -44,8 +44,26 @@ export function ProductFilter({
           </div>
         </div>
         <div>
-          <h5>Filter by</h5>
+          <h5>Condition</h5>
           <div className={styles.operators}>
+            <button
+              id="greater"
+              className={
+                condition == "greater" ? styles.selected : styles.conditionButton
+              }
+              onClick={handleFilterConditionClick}
+            >
+              {">"}
+            </button>
+            <button
+              id="lesser"
+              className={
+                condition == "lesser" ? styles.selected : styles.conditionButton
+              }
+              onClick={handleFilterConditionClick}
+            >
+              {"<"}
+            </button>
             <button
               id="different"
               className={

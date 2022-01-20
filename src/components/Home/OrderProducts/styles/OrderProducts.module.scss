@@ -96,11 +96,11 @@
   }
   @media screen and (max-width: 920px) {
     width: 50%;
+    justify-content: space-between;
     .order {
-      justify-content: space-between;
+      gap: 2rem;
       width: 100%;
       .orderOptionsContainer {
-        justify-content: space-between;
         .orderOptions {
           grid-template-columns: 1fr 1fr 1fr;
         }

@@ -1,22 +1,25 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Header } from "../components/Header";
-import styles from "../../styles/Home.module.scss";
+import styles from "../../../styles/Home.module.scss";
 import React, { useEffect, useState } from "react";
+
+import { Header } from "../../components/Header";
+import { ProductRepository } from "../../core/data/repositories/product_repository_implementation";
 import {
   ApiResponseProducts,
   GetAllProductsUsecase,
   ProductParams,
-} from "../core/domain/usecases/get_all_products_usecase";
-import { ProductRepository } from "../core/data/repositories/product_repository_implementation";
-import { ProductTable } from "../components/ProductTable";
-import { OrderProducts } from "../components/OrderProducts";
-import { ProductsInfo } from "../components/ProductsInfo";
-import { ProductFilter } from "../components/ProductFilter";
+} from "../../core/domain/usecases/get_all_products_usecase";
+import { OrderProducts } from "../../components/Home/OrderProducts";
+import { ProductFilter } from "../../components/Home/ProductFilter";
+import { ProductsInfo } from "../../components/Home/ProductsInfo";
+import { ProductTable } from "../../components/Home/ProductTable";
+import { useLocalStorage } from "../../utils/use_local_storage";
 
 const Home: NextPage = () => {
+  const [currentPage, setCurrentPage] = useLocalStorage("currentPage", 0);
   const [productParams, setProductParams] = useState<ProductParams>({
-    limit: 15,
+    limit: 25,
     offset: 0,
     order: "",
     orderElement: "",
@@ -46,6 +49,7 @@ const Home: NextPage = () => {
   ]);
 
   const getProducts = async () => {
+    setProductParams({...productParams, offset: currentPage});
     const response = await usecase.execute(productParams);
     setProductsData(response);
   };
@@ -57,6 +61,7 @@ const Home: NextPage = () => {
         : productParams.offset - productParams.limit;
     if (newOffset >= 0 && newOffset <= productsData?.meta.total_items) {
       setProductParams({ ...productParams, offset: newOffset });
+      setCurrentPage(newOffset);
     } else {
       return;
     }
@@ -91,6 +96,10 @@ const Home: NextPage = () => {
     }
   };
 
+  const handleProductDeletion = (id: string) => {
+    getProducts();
+  };
+
   const handleFilterConditionClick = (
     e: React.FormEvent<HTMLButtonElement>
   ) => {
@@ -107,7 +116,7 @@ const Home: NextPage = () => {
 
   const handleApplyFilterClick = () => {
     getProducts();
-  }
+  };
 
   return (
     <div className={styles.container}>
@@ -137,6 +146,7 @@ const Home: NextPage = () => {
         <ProductTable
           handlePageChange={handlePageChange}
           products={productsData.products}
+          handleProductDeletion={handleProductDeletion}
         />
       </div>
     </div>

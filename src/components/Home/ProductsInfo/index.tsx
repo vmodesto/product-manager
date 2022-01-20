@@ -1,4 +1,4 @@
-import { ProductsMetaEntity } from '../../core/domain/entities/products_meta_entity';
+import { ProductsMetaEntity } from '../../../core/domain/entities/products_meta_entity';
 import styles from './styles/ProductsInfo.module.scss';
 
 interface ProductsInfoProps {

@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductParams } from "../../core/domain/usecases/get_all_products_usecase";
+import { ProductParams } from "../../../core/domain/usecases/get_all_products_usecase";
 import styles from "./styles/OrderProducts.module.scss";
 
 interface OrderProductsProps {

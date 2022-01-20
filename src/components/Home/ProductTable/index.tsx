@@ -1,29 +1,32 @@
 import React from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { ProductEntity } from "../../core/domain/entities/product_entity";
+import { ProductEntity } from "../../../core/domain/entities/product_entity";
+import { ProductTableItem } from "./ProductTableItem";
 import styles from "./styles/ProductTable.module.scss";
 
 interface ProductTableProps {
   handlePageChange: (type: string) => void;
   products: ProductEntity[];
+  handleProductDeletion: (id: string) => void
 }
 
 export function ProductTable({
   handlePageChange,
   products,
+  handleProductDeletion,
 }: ProductTableProps) {
   return (
     <div className={styles.tableContainer}>
       <div className={styles.tableNavigation}>
         <button
           name="offset"
-          onClick={(e: any) => handlePageChange("previus")}
+          onClick={() => handlePageChange("previus")}
         >
           <IoIosArrowBack className={styles.tableNavigationIcon} />
         </button>
         <button 
           name="offset"
-          onClick={(e: any) => handlePageChange("next")}
+          onClick={() => handlePageChange("next")}
         >
           next page
           <IoIosArrowForward className={styles.tableNavigationIcon} />
@@ -42,24 +45,16 @@ export function ProductTable({
         </thead>
         <tbody>
           {products.map((product) => (
-            <tr key={product.id}>
-              <td>{product.id}</td>
-              <td>{product.name}</td>
-              <td>{product.description}</td>
-              <td>
-                {Intl.NumberFormat("en-US", {
-                  style: "currency",
-                  currency: "USD",
-                }).format(parseFloat(product.price))}
-              </td>
-              <td>{product.quantity}</td>
-              <td>
-                <div>
-                  <button>Show</button>
-                  <button>Delete</button>
-                </div>
-              </td>
-            </tr>
+            <ProductTableItem
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              description={product.description}
+              price={product.price}
+              quantity={product.quantity}
+              products={products}
+              handleProductDeletion={handleProductDeletion}
+            />
           ))}
         </tbody>
       </table>

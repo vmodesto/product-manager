@@ -24,7 +24,7 @@ export class GetAllProductsUsecase {
   }
 
   async execute(productParams: ProductParams): Promise<ApiResponseProducts> {
-    const response = await this.repository.getAllProducts(productParams)
+    const response = await this.repository.all(productParams)
     return response;
   }
 }
