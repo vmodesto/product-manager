@@ -20,7 +20,7 @@ export function ProductFilter({
   condition,
 }: ProductFilterProps) {
   return (
-    <div className={styles.filterContainer}>
+    <section className={styles.filterContainer}>
       <h3>Filter</h3>
       <div className={styles.filter}>
         <div className={styles.inputs}>
@@ -112,6 +112,6 @@ export function ProductFilter({
           Apply filter <IoFilter id={styles.filterIcon} />
         </button>
       </div>
-    </div>
+    </section>
   );
 }

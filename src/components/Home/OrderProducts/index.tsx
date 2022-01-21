@@ -14,7 +14,7 @@ export function OrderProducts({
   handleOrderByClick,
 }: OrderProductsProps) {
   return (
-    <div className={styles.orderContainer}>
+    <section className={styles.orderContainer}>
       <h3>Order</h3>
       <div className={styles.order}>
         <button
@@ -97,6 +97,6 @@ export function OrderProducts({
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

@@ -7,7 +7,7 @@ interface ProductsInfoProps {
 
 export function ProductsInfo({meta}: ProductsInfoProps) {
   return (
-    <div className={styles.infoContainer}>
+    <section className={styles.infoContainer}>
       <h3>Info</h3>
       <div className={styles.info}>
         <div>
@@ -23,7 +23,7 @@ export function ProductsInfo({meta}: ProductsInfoProps) {
           <h4>{meta.total_items}</h4>
         </div>
         <div>
-          <h5>Filtered products</h5>
+          <h5>Filtered products per page</h5>
           <h4>{meta.total_items_filtered}</h4>
         </div>
         <div>
@@ -31,6 +31,6 @@ export function ProductsInfo({meta}: ProductsInfoProps) {
           <h4>{meta.items_per_page}</h4>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

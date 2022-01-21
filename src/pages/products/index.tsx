@@ -119,7 +119,7 @@ const Home: NextPage = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <Head>
         <title>HOME | ProductManager</title>
       </Head>
@@ -149,7 +149,7 @@ const Home: NextPage = () => {
           handleProductDeletion={handleProductDeletion}
         />
       </div>
-    </div>
+    </main>
   );
 };
 

@@ -69,7 +69,7 @@ const EditProduct: NextPage = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <main className={styles.container}>
       <h1>Edit product</h1>
       <div className={styles.formContainer}>
         <form onSubmit={handleUpdateButtonClick}>
@@ -125,7 +125,7 @@ const EditProduct: NextPage = () => {
           <button>Update product</button>
         </form>
       </div>
-    </div>
+    </main>
   );
 };
 

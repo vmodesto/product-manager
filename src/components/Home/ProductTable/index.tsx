@@ -16,7 +16,7 @@ export function ProductTable({
   handleProductDeletion,
 }: ProductTableProps) {
   return (
-    <div className={styles.tableContainer}>
+    <section className={styles.tableContainer}>
       <div className={styles.tableNavigation}>
         <button
           name="offset"
@@ -58,6 +58,6 @@ export function ProductTable({
           ))}
         </tbody>
       </table>
-    </div>
+    </section>
   );
 }
