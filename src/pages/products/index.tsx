@@ -41,15 +41,15 @@ const Home: NextPage = () => {
   const usecase = new GetAllProductsUsecase(repository);
 
   useEffect(() => {
-    getProducts();
+    getProducts(currentPage);
   }, [
     productParams.order,
     productParams.orderElement,
     productParams.offset,
   ]);
 
-  const getProducts = async () => {
-    setProductParams({...productParams, offset: currentPage});
+  const getProducts = async (offset: number) => {
+    setProductParams({...productParams, offset: offset});
     const response = await usecase.execute(productParams);
     setProductsData(response);
   };
@@ -97,7 +97,7 @@ const Home: NextPage = () => {
   };
 
   const handleProductDeletion = (id: string) => {
-    getProducts();
+    getProducts(currentPage);
   };
 
   const handleFilterConditionClick = (
@@ -115,7 +115,7 @@ const Home: NextPage = () => {
 
   const handleApplyFilterClick = async () => {
     setCurrentPage(0);
-    setProductParams({...productParams, offset: 0});
+    getProducts(0);
   };
 
   return (
