@@ -103,7 +103,6 @@ const Home: NextPage = () => {
   const handleFilterConditionClick = (
     e: React.FormEvent<HTMLButtonElement>
   ) => {
-    console.log(e.currentTarget.id);
     setProductParams({ ...productParams, condition: e.currentTarget.id });
   };
 
@@ -114,8 +113,9 @@ const Home: NextPage = () => {
     });
   };
 
-  const handleApplyFilterClick = () => {
-    getProducts();
+  const handleApplyFilterClick = async () => {
+    setCurrentPage(0);
+    setProductParams({...productParams, offset: 0});
   };
 
   return (
